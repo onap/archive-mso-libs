@@ -1,0 +1,150 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.openecomp.mso.libs</groupId>
+	<artifactId>openstack-java-sdk</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>OpenStack Java SDK</name>
+	<description>OpenStack Java SDK</description>
+	<properties>
+		<skip.sign>false</skip.sign>
+	</properties>
+
+
+	<distributionManagement>
+		<repository>
+			<id>mso-releases</id>
+			<name>MSO Release Repository</name>
+			<url>https://162.242.254.138:8443/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>mso-snapshots</id>
+			<name>MSO Snapshot Repository</name>
+			<url>https://162.242.254.138:8443/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<modules>
+		<module>openstack-client</module>
+		<module>nova-model</module>
+		<module>nova-client</module>
+		<module>keystone-client</module>
+		<module>swift-client</module>
+		<module>quantum-client</module>
+		<module>heat-client</module>
+		<module>glance-model</module>
+		<module>glance-client</module>
+		<module>keystone-model</module>
+		<module>swift-model</module>
+		<module>quantum-model</module>
+		<module>ceilometer-model</module>
+		<module>ceilometer-client</module>
+		<module>openstack-client-connectors</module>
+		<module>heat-model</module>
+	</modules>
+
+	<!-- <profiles> <profile> <id>console</id> <activation> <activeByDefault>true</activeByDefault> 
+		</activation> <modules> <module>openstack-console</module> </modules> </profile> 
+		<profile> <id>examples</id> <activation> <activeByDefault>true</activeByDefault> 
+		</activation> <modules> <module>openstack-examples</module> </modules> </profile> 
+		</profiles> -->
+
+	<licenses>
+		<license>
+			<name>Apache2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<inceptionYear>2012</inceptionYear>
+
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven 2 repository</name>
+			<url>http://repo2.maven.org/maven2/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<name>Maven 2 plugin repository</name>
+			<url>http://repo2.maven.org/maven2/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.17</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<!-- To use the plugin goals in your POM or parent POM -->
+		<plugins>
+		<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.17</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-gpg-plugin</artifactId> 
+				<version>1.4</version> <configuration> <skip>${skip.sign}</skip> </configuration> 
+				<executions> <execution> <id>sign-artifacts</id> <phase>verify</phase> <goals> 
+				<goal>sign</goal> </goals> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
