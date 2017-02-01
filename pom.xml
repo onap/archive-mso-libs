@@ -15,13 +15,13 @@
 
 	<distributionManagement>
 		<repository>
-			<id>mso-releases</id>
-			<name>MSO Release Repository</name>
+			<id>ecomp-releases</id>
+			<name>OpenECOMP - Release Repository</name>
 			<url>https://nexus.openecomp.org/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>mso-snapshots</id>
-			<name>MSO Snapshot Repository</name>
+			<id>ecomp-snapshots</id>
+			<name>OpenECOMP - Snapshot Repository</name>
 			<url>https://nexus.openecomp.org/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
