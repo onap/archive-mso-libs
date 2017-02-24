@@ -11,7 +11,6 @@ import com.woorea.openstack.base.client.OpenStackRequest;
 import com.woorea.openstack.keystone.model.Access;
 import com.woorea.openstack.keystone.model.Authentication;
 import com.woorea.openstack.keystone.model.authentication.AccessKey;
-import com.woorea.openstack.keystone.model.authentication.RackspaceAuthentication;
 import com.woorea.openstack.keystone.model.authentication.TokenAuthentication;
 import com.woorea.openstack.keystone.model.authentication.UsernamePassword;
 
@@ -63,11 +62,6 @@ public class TokensResource {
 			
 			public Authenticate withToken(String token) {
 				Authentication authentication = new TokenAuthentication(token);
-				return new Authenticate(authentication);
-			}
-			
-			public Authenticate withRackspace(String username, String apiKey, String region) {
-				Authentication authentication = new RackspaceAuthentication(username, apiKey);
 				return new Authenticate(authentication);
 			}
 			
