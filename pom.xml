@@ -13,6 +13,7 @@
 		<snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
 		<releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
 		<stagingNexusPath>/content/repositories/staging/</stagingNexusPath>
+                <siteNexusPath>/content/sites/site/org/onap/mso/lib/${project.version}</siteNexusPath>
 	</properties>
 	<distributionManagement>
 		<repository>
@@ -27,7 +28,7 @@
 		</snapshotRepository>
 		<site>
 			<id>ecomp-site</id>
-			<url>dav:${nexusproxy}${sitePath}</url>
+			<url>dav:${nexusproxy}${siteNexusPath}</url>
 		</site>
 	</distributionManagement>
 	<modules>
