@@ -13,6 +13,7 @@
 		<snapshotNexusPath>/content/repositories/snapshots/</snapshotNexusPath>
 		<releaseNexusPath>/content/repositories/releases/</releaseNexusPath>
 		<stagingNexusPath>/content/repositories/staging/</stagingNexusPath>
+                <siteNexusPath>/content/sites/site/org/onap/mso/lib/${project.version}</siteNexusPath>
 	</properties>
 	<distributionManagement>
 		<repository>
@@ -25,6 +26,10 @@
 			<name>OpenECOMP - Snapshot Repository</name>
 			<url>${nexusproxy}/${snapshotNexusPath}</url>
 		</snapshotRepository>
+		<site>
+			<id>ecomp-site</id>
+			<url>dav:${nexusproxy}${siteNexusPath}</url>
+		</site>
 	</distributionManagement>
 	<modules>
 		<module>openstack-client</module>
